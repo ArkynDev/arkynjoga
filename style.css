@@ -7,4 +7,4 @@
     scroll-behavior: smooth;
 }
 
-a { cursor: pointer; }
+button, a { cursor: pointer; }
