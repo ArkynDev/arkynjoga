@@ -1,0 +1,19 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+section {
+    height: 100vh;
+}
+
+a { text-decoration: none; }
+a, button { cursor: pointer; }
+
+.rounded-full {
+    border-radius: 9999px;
+}

@@ -4,27 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arkyn Joga</title>
-    <script src="https://cdn.tailwindcss.com?aspect-ratio"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="global.css">
 </head>
 <body>
-    <header class="flex justify-between rounded-full left-1/2 translate-x-2/4 w-1/2 mt-4 py-4 px-8 text-white bg-violet-800">
-        <a href="" class="">Logo</a>
-        <nav>
-            <ul class="flex gap-4">
-                <a href="">
-                    <li>Sobre</li>
-                </a>
-                <a href="">
-                    <li>Social</li>
-                </a>
-                <a href="">
-                    <li>Setup</li>
-                </a>
-            </ul>
-        </nav>
+    <header>
+        <div id="navbar" class="rounded-full">
+            <a href="">Logo</a>
+            <nav>
+                <ul>
+                    <a href="">
+                        <li>Sobre</li>
+                    </a>
+                    <a href="">
+                        <li>Social</li>
+                    </a>
+                    <a href="">
+                        <li>Setup</li>
+                    </a>
+                </ul>
+            </nav>
+        </div>
+        <label class="buttons__burger" for="burger">
+            <input type="checkbox" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
     </header>
-    <main></main>
+    <main>
+        <section>
+            <h2>Section 01</h2>
+        </section>
+        <section>
+            <h2>Section 02</h2>
+        </section>
+    </main>
     <footer></footer>
 </body>
 </html>
