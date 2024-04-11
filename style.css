@@ -1,3 +1,4 @@
+@charset "UTF-8";
 header {
   display: flex;
   align-items: center;
@@ -28,6 +29,25 @@ main {
 main section:first-child {
   padding-top: 75px;
 }
+main #s2 {
+  align-items: center;
+  justify-content: center;
+}
+main #s2 div {
+  display: flex;
+}
+main #s2 div div {
+  width: 50%;
+}
+main #s2 div div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+main #s2 div div:last-child #social {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
 
 @media screen and (max-width: 768px) {
   header div {
@@ -38,7 +58,35 @@ main section:first-child {
     display: block !important;
   }
   nav {
-    display: none;
+    position: absolute;
+    display: flex;
+    top: 60px;
+    right: -200px;
+    padding: 24px 64px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 0.5s right ease-in-out;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0px;
+  }
+  nav ul a {
+    width: 100%;
+  }
+  nav ul a li {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  header div {
+    padding: 1rem 0.5rem;
+    width: 100%;
+  }
+  .buttons__burger {
+    display: block !important;
   }
 }
 @media screen and (min-width: 992px) {
@@ -51,8 +99,81 @@ main section:first-child {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 }
+.hideBacktoTop {
+  display: none !important;
+}
+
+.showBacktoTop {
+  display: flex;
+}
+
+.showNav {
+  right: 10px;
+}
+
+.hideNav {
+  right: -200px;
+}
+
+/* Social Container */
+.social-btn {
+  width: 60px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  /* overflow: hidden; */
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.social-btn:hover .bg {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+.social-btn:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
+}
+
+.svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.bg {
+  position: absolute;
+  content: "";
+  width: 80%;
+  height: 90%;
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.instagram-bg {
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#f09433", endColorstr="#bc1888",GradientType=1 );
+}
+
+/* botão de menu mobile */
 .buttons__burger {
-  --size: 2.5rem;
+  --size: 2.2rem;
   --clr: #000;
   width: var(--size);
   height: calc(0.7 * var(--size));
@@ -98,6 +219,58 @@ main section:first-child {
   transform: translateY(-70%) rotate(-40deg);
   width: 50%;
   top: 50%;
+}
+
+/* Botão de voltar ao topo */
+.back-btn {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 25px;
+  bottom: 25px;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(#7703ad, #d14bfa);
+  border-radius: 50%;
+  border: none;
+}
+.back-btn:hover .text {
+  opacity: 1;
+  transition-duration: 0.7s;
+}
+.back-btn:hover .arrow {
+  animation: slide-in-bottom 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-iteration-count: infinite;
+}
+
+.arrow path {
+  fill: white;
+}
+
+.text {
+  font-size: 0.7em;
+  width: 100px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -18px;
+  opacity: 0;
+  transition-duration: 0.7s;
+}
+
+/* Animações */
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
