@@ -4,6 +4,7 @@ header {
     justify-content: center;
     position: absolute;
     margin-top: 1rem;
+    padding: 6px 12px;
     width: 100%;
     color: white;
 
@@ -11,9 +12,6 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1.25rem 2rem;
-        width: 50%;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
         ul {
             display: flex;
@@ -37,65 +35,87 @@ main {
 
 @media screen and (max-width: 768px) {
     header {
-        justify-content: end;
-        padding: 6px 12px;
+        div {
+        padding: 1rem 0.5rem;
+        width: 100%;
+        }
     }
 
     .buttons__burger {
-        --size: 3rem;
-        --clr: #000;
-        width: var(--size);
-        height: calc(0.7 * var(--size));
-        cursor: pointer;
-        position: relative;
-        display: block;
-    
-        #burger {
-            display: none;
-            width: 100%;
-            height: 100%;
-        }
-    
-        span {
-            display: block;
-            position: absolute;
-            width: 100%;
-            border-radius: 0.5rem;
-            border: 3px solid var(--clr);
-            background-color: var(--clr);
-            transition: 0.15s ease-in-out;
-        }
-    
-        span:nth-of-type(1) {
-            top: 0;
-            right: 0;
-            transform-origin: right center;
-        }
-    
-        span:nth-of-type(2) {
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    
-        span:nth-of-type(3) {
-            top: 100%;
-            right: 0;
-            transform-origin: right center;
-            transform: translateY(-100%);
-        }
+        display: block !important;
     }
 
-    #navbar {
+    nav {
         display: none;
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1279px) {
-    .buttons__burger {
-        display: none;
+@media screen and (min-width:768px) and (max-width:992px) {
+}
 
-        #burger {
-            display: none;
+@media screen and (min-width:992px) {
+    header {
+        padding: 0px !important;
+        div {
+            padding: 1.25rem 2rem;
+            width: 50%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
+    }
+}
+
+.buttons__burger {
+    --size: 2.5rem;
+    --clr: #000;
+    width: var(--size);
+    height: calc(0.7 * var(--size));
+    cursor: pointer;
+    position: relative;
+    display: none;
+
+    #burger {
+        display: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        border-radius: 0.5rem;
+        border: 3px solid var(--clr);
+        background-color: var(--clr);
+        transition: 0.15s ease-in-out;
+    }
+
+    span:nth-of-type(1) {
+        top: 0;
+        right: 0;
+        transform-origin: right center;
+    }
+
+    span:nth-of-type(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    span:nth-of-type(3) {
+        top: 100%;
+        right: 0;
+        transform-origin: right center;
+        transform: translateY(-100%);
+    }
+
+    #burger:checked ~ span:nth-of-type(1) {
+        transform: translateY(-30%) rotate(40deg);
+        width: 50%;
+        top: 50%;
+    }
+
+    #burger:checked ~ span:nth-of-type(3) {
+        transform: translateY(-70%) rotate(-40deg);
+        width: 50%;
+        top: 50%;
     }
 }
