@@ -18,3 +18,5 @@ a, button { cursor: pointer; }
 .rounded-full {
     border-radius: 9999px;
 }
+
+.text-decorate { color: #9134A6; }

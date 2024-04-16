@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 header {
   display: flex;
   align-items: center;
@@ -26,27 +27,65 @@ main {
   display: flex;
   flex-direction: column;
 }
-main section:first-child {
+main #s1 {
   padding-top: 75px;
 }
-main #s2 {
+main #s1 > div {
+  display: flex;
+  width: 50%;
+  height: 100%;
+}
+main #s1 #s1-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+  gap: 1.25rem;
+}
+main #s1 #s1-left h2 {
+  font-family: "Outfit", Verdana, Geneva, Tahoma, sans-serif;
+  color: rgba(59, 59, 59, 0.8);
+}
+main #s1 #s1-right {
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-main #s2 div {
+main #s1 #s1-right img {
+  width: 20rem;
+}
+main #s2 {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main #s2 > div {
   display: flex;
+  width: 100%;
 }
-main #s2 div div {
-  width: 50%;
+main #s2 > div:first-child {
+  align-items: center;
+  justify-content: center;
+  height: 20%;
 }
-main #s2 div div:last-child {
+main #s2 > div:first-child h2 {
+  text-align: center;
+}
+main #s2 #setup-container {
+  flex: auto;
+  justify-content: center;
+  align-items: start;
+  gap: 0.75rem;
+}
+main #s2 #setup-container div {
+  border: 1px solid black;
+  width: 200px;
+  padding: 8px;
+}
+main #s2 #setup-container div ul {
   display: flex;
   flex-direction: column;
-}
-main #s2 div div:last-child #social {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
+  gap: 0.8rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -113,62 +152,6 @@ main #s2 div div:last-child #social {
 
 .hideNav {
   right: -200px;
-}
-
-/* Social Container */
-.social-btn {
-  width: 60px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background-color: transparent;
-  position: relative;
-  /* overflow: hidden; */
-  border-radius: 7px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.social-btn:hover .bg {
-  transform: rotate(35deg);
-  transform-origin: bottom;
-}
-.social-btn:hover .svgContainer {
-  background-color: rgba(156, 156, 156, 0.466);
-}
-
-.svgContainer {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  backdrop-filter: blur(4px);
-  letter-spacing: 0.8px;
-  border-radius: 10px;
-  transition: all 0.3s;
-  border: 1px solid rgba(156, 156, 156, 0.466);
-}
-
-.bg {
-  position: absolute;
-  content: "";
-  width: 80%;
-  height: 90%;
-  z-index: -1;
-  border-radius: 9px;
-  pointer-events: none;
-  transition: all 0.3s;
-}
-
-.instagram-bg {
-  background: #f09433;
-  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#f09433", endColorstr="#bc1888",GradientType=1 );
 }
 
 /* botão de menu mobile */
